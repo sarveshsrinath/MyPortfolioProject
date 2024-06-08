@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarvesh Portfolio</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="brand">
+        <a href="index.html"><span class="highlight">S</span>arvesh.</a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="#about-me" onclick="scrollToSection(event ,'about-me')"
+            >About Me
+          </a>
+        </li>
+        <li>
+          <a href="#my-works" onclick="scrollToSection(event, 'my-works')"
+            >My Works</a
+          >
+        </li>
+        <li>
+          <a href="#contact" onclick="scrollToSection(event, 'contact')"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <img src="images/myimage.jpeg" alt="Profile Image" />
+      <div class="text">
+        <h1>Hey there!</h1>
+        <p>
+          My name is Sarvesh Srinath and I am currently a first year pursuing
+          Bachelor of Technology in Computer Science and AI at Newton School of
+          Technology.
+        </p>
+      </div>
+    </div>
+    <div id="about-me" class="about-me">
+      <div class="text">
+        <h2>About Me</h2>
+        <p>
+          I was born in Pondicherry (Puducherry) and raised entirely in
+          Bengaluru, but Bengaluru being a tech hub, I came to really love doing
+          software development. I would love to learn along this exciting
+          journey.
+        </p>
+      </div>
+      <img
+        src="images/istockphoto-1320976968-1024x1024.jpg"
+        alt="About Me Image"
+      />
+    </div>
+    <div id="my-works" class="my-works">
+      <div class="text">
+        <h2>My Works</h2>
+        <p>
+          I have worked on a couple of projects myself including this portfolio.
+          You can check them out in the link attached below!
+        </p>
+        <div class="button-container">
+          <a
+            href="https://github.com/sarveshsrinath/NavBarUsingHtmlCss.git"
+            target="_blank"
+            >My GitHub</a
+          >
+        </div>
+      </div>
+    </div>
+    <div id="contact" class="contact">
+      <div class="text">
+        <h2 style="font-size: 60px; color: red">Contact</h2>
+        <p>You can reach out using the following links attached below:</p>
+        <div class="button-container">
+          <a
+            href="https://www.linkedin.com/in/your-linkedin-profile"
+            target="_blank"
+          >
+            <img src="images/linkedinimage.jpeg" alt="LinkedIn" /> LinkedIn
+          </a>
+          <a href="https://wa.me/your-whatsapp-number" target="_blank">
+            <img src="images/whatsappimage.jpg" alt="WhatsApp" /> WhatsApp
+          </a>
+          <a href="https://twitter.com/your-twitter-handle" target="_blank">
+            <img src="images/xlogo.jpg" alt="Twitter" /> Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>© 2024 Sarvesh Srinath. All rights reserved.</p>
+      <a href="#">Privacy Policy</a> | <a href="#">Sitemap</a> |
+      <a href="#">Disclaimer</a> | <a href="#">Terms of Use</a> |
+      <a
+        href="https://maps.google.com/?q=Newton School of Technology, Bengaluru"
+        target="_blank"
+        >Address and Directions</a
+      >
+    </footer>
+    <script>
+      function scrollToSection(event, sectionId) {
+        event.preventDefault();
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
