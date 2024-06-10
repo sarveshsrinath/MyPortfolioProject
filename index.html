@@ -15,7 +15,12 @@
       <div class="brand">
         <a href="index.html"><span class="highlight">S</span>arvesh.</a>
       </div>
-      <ul>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li>
           <a href="#about-me" onclick="scrollToSection(event ,'about-me')"
@@ -112,6 +117,14 @@
         event.preventDefault();
         const section = document.getElementById(sectionId);
         section.scrollIntoView({ behavior: "smooth" });
+      }
+
+      function toggleMenu() {
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+
+        const menuIcon = document.querySelector(".menu-icon");
+        menuIcon.classList.toggle("open");
       }
     </script>
   </body>

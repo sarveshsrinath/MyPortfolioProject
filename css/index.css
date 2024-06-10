@@ -1,133 +1,264 @@
 body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: black;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    width: 100%;
-    padding: 20px 40px;
-    box-sizing: border-box;
-  }
-  .navbar .brand a {
-    font-size: 36px;
-    color: white;
-    text-decoration: none;
-  }
-  .navbar .brand a .highlight {
-    color: red;
-  }
-  .navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 40px;
-  }
-  .navbar ul li {
-    display: inline;
-  }
-  .navbar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 22px;
-    padding: 10px;
-    position: relative;
-  }
-  .navbar ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  width: 100%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.navbar .brand a {
+  font-size: 36px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .brand a .highlight {
+  color: red;
+}
+
+.navbar .menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.navbar .menu-icon div {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.navbar .menu-icon.open .bar1 {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.navbar .menu-icon.open .bar2 {
+  opacity: 0;
+}
+
+.navbar .menu-icon.open .bar3 {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 40px;
+}
+
+.navbar ul li {
+  display: inline;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 10px;
+  position: relative;
+}
+
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  left: 0;
+  background: red;
+  transition: width 0.4s ease;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+
+.main-content, .about-me, .my-works, .contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  gap: 40px;
+  text-align: left;
+  width: 80%;
+  box-sizing: border-box;
+}
+
+.main-content img, .about-me img {
+  width: 400px;
+  border-radius: 20px;
+  border: 5px solid white;
+  box-shadow: 5px 5px 0 0 white, 10px 10px 0 0 black;
+}
+
+.main-content .text, .about-me .text, .my-works .text, .contact .text {
+  max-width: 800px;
+}
+
+.main-content .text h1, .about-me .text h2, .my-works .text h2, .contact .text h2 {
+  font-size: 60px;
+  color: red;
+  margin: 0;
+}
+
+.main-content .text p, .about-me .text p, .my-works .text p, .contact .text p {
+  font-size: 24px;
+  line-height: 1.8;
+}
+
+.my-works .button-container, .contact .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.my-works .button-container a, .contact .button-container a {
+  background-color: purple;
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  font-size: 24px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0 0 white, 10px 10px 0 0 black;
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.my-works .button-container a:hover, .contact .button-container a:hover {
+  transform: translateY(-5px);
+}
+
+.contact .button-container a img {
+  width: 24px;
+  height: 24px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border-top: 5px solid red;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .navbar .menu-icon {
     display: block;
-    margin-top: 5px;
-    left: 0;
-    background: red;
-    transition: width 0.4s ease;
   }
-  .navbar ul li a:hover::after {
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
     width: 100%;
-  }
-  .main-content, .about-me, .my-works, .contact {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px;
-    gap: 40px;
-    text-align: left;
-    width: 80%;
-    box-sizing: border-box;
-  }
-  .main-content img, .about-me img {
-    width: 400px;
-    border-radius: 20px;
-    border: 5px solid white;
-    box-shadow: 5px 5px 0 0 white, 10px 10px 0 0 black;
-  }
-  .main-content .text, .about-me .text, .my-works .text, .contact .text {
-    max-width: 800px;
-  }
-  .main-content .text h1, .about-me .text h2, .my-works .text h2, .contact .text h2 {
-    font-size: 60px;
-    color: red;
-    margin: 0;
-  }
-  .main-content .text p, .about-me .text p, .my-works .text p, .contact .text p {
-    font-size: 24px;
-    line-height: 1.8;
-  }
-  .my-works .button-container, .contact .button-container {
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center;
-    gap: 40px; /* Increased gap between buttons */
-    width: 100%; /* Ensure the container takes full width */
-  }
-  .my-works .button-container a, .contact .button-container a {
-    background-color: purple;
-    color: white;
-    text-decoration: none;
-    padding: 15px 30px;
-    font-size: 24px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 0 0 white, 10px 10px 0 0 black;
-    transition: transform 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .my-works .button-container a:hover, .contact .button-container a:hover {
-    transform: translateY(-5px);
-  }
-  .contact .button-container a img {
-    width: 24px;
-    height: 24px;
-  }
-  footer {
     background-color: black;
-    color: white;
+    border-top: 2px solid red;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .navbar ul li {
     width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
     text-align: center;
-    border-top: 5px solid red;
+    padding: 10px 0; /* Reduced padding */
   }
-  footer p {
-    margin: 10px 0;
+
+  .navbar ul li a {
+    padding: 10px; /* Reduced padding */
+    border-bottom: 1px solid red;
   }
-  footer a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 10px;
+
+  .navbar ul li a::after {
+    content: none;
   }
-  footer a:hover {
-    text-decoration: underline;
+
+  .main-content, .about-me, .my-works, .contact {
+    flex-direction: column;
+    padding: 30px;
+    width: 100%;
   }
+
+  .main-content img, .about-me img {
+    width: 100%;
+  }
+
+  .main-content .text, .about-me .text, .my-works .text, .contact .text {
+    text-align: center;
+  }
+
+  .my-works .button-container, .contact .button-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .main-content .text h1, .about-me .text h2, .my-works .text h2, .contact .text h2 {
+    font-size: 36px;
+  }
+
+  .main-content .text p, .about-me .text p, .my-works .text p, .contact .text p {
+    font-size: 18px;
+  }
+
+  .my-works .button-container a, .contact .button-container a {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .contact .button-container a img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+
+
+   
+
+
+
+
+
+
