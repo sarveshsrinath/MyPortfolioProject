@@ -15,17 +15,17 @@
       <div class="brand">
         <a href="index.html"><span class="highlight">S</span>arvesh.</a>
       </div>
-      <div class="menu-icon" onclick="toggleMenu()">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+      <ul class="menu">
+        <li><a href="index.html" onclick="hideMenu()">Home</a></li>
         <li>
-          <a href="#about-me" onclick="scrollToSection(event ,'about-me')"
-            >About Me
-          </a>
+          <a href="#about-me" onclick="scrollToSection(event, 'about-me')"
+            >About Me</a
+          >
         </li>
         <li>
           <a href="#my-works" onclick="scrollToSection(event, 'my-works')"
@@ -85,21 +85,16 @@
     <div id="contact" class="contact">
       <div class="text">
         <h2 style="font-size: 60px; color: red">Contact</h2>
-        <p>You can reach out using the following links attached below:</p>
-        <div class="button-container">
-          <a
-            href="https://www.linkedin.com/in/your-linkedin-profile"
-            target="_blank"
-          >
-            <img src="images/linkedinimage.jpeg" alt="LinkedIn" /> LinkedIn
-          </a>
-          <a href="https://wa.me/your-whatsapp-number" target="_blank">
-            <img src="images/whatsappimage.jpg" alt="WhatsApp" /> WhatsApp
-          </a>
-          <a href="https://twitter.com/your-twitter-handle" target="_blank">
-            <img src="images/xlogo.jpg" alt="Twitter" /> Twitter
-          </a>
-        </div>
+        <p>You can reach out using the form below:</p>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
       </div>
     </div>
     <footer>
@@ -117,14 +112,17 @@
         event.preventDefault();
         const section = document.getElementById(sectionId);
         section.scrollIntoView({ behavior: "smooth" });
+        hideMenu(); // Hide menu after clicking
       }
 
       function toggleMenu() {
-        const navLinks = document.querySelector(".nav-links");
-        navLinks.classList.toggle("active");
+        const menu = document.querySelector(".menu");
+        menu.classList.toggle("active");
+      }
 
-        const menuIcon = document.querySelector(".menu-icon");
-        menuIcon.classList.toggle("open");
+      function hideMenu() {
+        const menu = document.querySelector(".menu");
+        menu.classList.remove("active");
       }
     </script>
   </body>
