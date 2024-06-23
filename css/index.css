@@ -107,7 +107,7 @@ body {
   text-decoration: none;
   padding: 15px 30px;
   font-size: 24px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 5px 5px 0 0 white, 10px 10px 0 0 black;
   transition: transform 0.3s;
   display: flex;
@@ -147,7 +147,7 @@ body {
   font-size: 24px;
   padding: 15px;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
   box-shadow: 5px 5px 0 0 white, 10px 10px 0 0 black;
   transition: transform 0.3s;
